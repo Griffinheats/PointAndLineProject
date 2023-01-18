@@ -9,12 +9,13 @@ public class TestPoint
         Point test5 = new Point(3, 10);
         Point test6 = new Point(6, 8);
 
-        System.out.println("Testing distance" + test2.manhattanDistance(test3));
-        System.out.println("Testing distance" + test3.manhattanDistance(test4));
-        System.out.println();
-        System.out.println("Testing linear" + test2.isCollinear(test4, test5));
-        System.out.println("Testing linear" + test2.isCollinear(test3, test4));
-        System.out.println("Testing linear" + test1.isCollinear(test2, test6));
-        System.out.println("Testing linear" + test1.isCollinear(test2, test3));
+        System.out.println("distance");
+        System.out.println(test2.manhattanDistance(test3));
+        System.out.println(test3.manhattanDistance(test4));
+        System.out.println("linear");
+        System.out.println(test2.isCollinear(test4, test5));
+        System.out.println(test2.isCollinear(test3, test4));
+        System.out.println(test1.isCollinear(test2, test6));
+        System.out.println(test1.isCollinear(test2, test3));
     }
 }
