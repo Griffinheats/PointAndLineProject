@@ -42,7 +42,7 @@ public class Point
         boolean test = false;
         double slope1 = ((x-p1.getX())/(y-p2.getY()));
         double slope2 = ((p1.getX()-p2.getX())/(p1.getY()-p2.getY()));
-        if(Math.round(slope1) == Math.round(slope2))
+        if(slope1 == slope2 || slope1+.01 == slope2 || slope1 == slope2+.01)
         {
             test = true;
         }
