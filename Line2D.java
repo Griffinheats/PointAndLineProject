@@ -36,15 +36,15 @@ public class Line2D
 
     public double getSlope()
     {
-        return ((x1-x2)/(y1-y2));
+        return (double)((Math.abs(x1-x2))/(Math.abs(y1-y2)));
     }
 
     public boolean isCollinear(Point p)
     {
         boolean test = false;
-        double slope1 = ((x1-x2)/(y1-y2));
-        double slope2 = ((x2-p.getX())/y2-p.getY());
-        if(slope1 == slope2 || slope1+.01 == slope2 || slope1 == slope2+.01)
+        double slope1 = getSlope();
+        double slope2 = (Math.abs(x2-p.getX())/(Math.abs(y2-p.getY())));
+        if(Math.abs(slope1-slope2) < .01)
         {
             test = true;
         }

@@ -40,9 +40,9 @@ public class Point
     public boolean isCollinear(Point p1, Point p2)
     {
         boolean test = false;
-        double slope1 = ((x-p1.getX())/(y-p2.getY()));
-        double slope2 = ((p1.getX()-p2.getX())/(p1.getY()-p2.getY()));
-        if(slope1 == slope2 || slope1+.01 == slope2 || slope1 == slope2+.01)
+        double slope1 = (Math.abs(x-p1.getX())/Math.abs(y-p1.getY()));
+        double slope2 = (Math.abs(p1.getX()-p2.getX())/Math.abs(p1.getY()-p2.getY()));
+        if(Math.abs(slope1-slope2) < .01)
         {
             test = true;
         }
