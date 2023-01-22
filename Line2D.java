@@ -1,53 +1,50 @@
 public class Line2D 
 {
-    int x1, x2, y1, y2;
+    private Point p1;
+    private Point p2;
 
-    public Line2D(Point p1, Point p2)
+    //constructors
+    public Line2D(Point point1, Point point2)
     {
-        x1 = p1.getX();
-        y1 = p1.getY();
-        x2 = p2.getX();
-        y2 = p2.getX();
+        p1 = point1;
+        p2 = point2;
+    }
+    public Line2D(int x1, int y1, int x2, int y2)
+    {
+        p1 = new Point(x1, y1);
+        p2 = new Point(x2, y2);
     }
 
-    public Line2D(int setX1, int setY1, int setX2, int setY2)
-    {
-        x1 = setX1;
-        y1 = setY1;
-        x2 = setX2;
-        y2 = setY2;
-    }
-
+    //getters
     public Point getP1()
     {
-        return new Point(x1, y1);
+        return p1;
     }
-
     public Point getP2()
     {
-        return new Point(x2, y2);
+        return p2;
+    }
+    public double getSlope()
+    {
+        double run = (p2.getX()-p1.getX());
+        double rise = (p2.getY()-p1.getY());
+        return(rise/run);
     }
 
+    //other methods
     public String toString()
     {
-        String result = ("[(" + x1 + ", " + y1 + "), (" + x2 + ", " + y2 + ")]");
+        return ("[(" + p1.getX() + ", " + p1.getY() + "), (" + p2.getX() + ", " + p2.getY() + ")]");
+    }
+    public boolean isCollinear(Point p)
+    {
+        boolean result = false;
+        double slope = ((p2.getY() - p.getY())/(p2.getX() - p.getX()));
+        if(getSlope() - slope < .01)
+        {
+            result = true;
+        }
         return result;
     }
 
-    public double getSlope()
-    {
-        return (double)((Math.abs(x1-x2))/(Math.abs(y1-y2)));
-    }
-
-    public boolean isCollinear(Point p)
-    {
-        boolean test = false;
-        double slope1 = getSlope();
-        double slope2 = (Math.abs(x2-p.getX())/(Math.abs(y2-p.getY())));
-        if(Math.abs(slope1-slope2) < .01)
-        {
-            test = true;
-        }
-        return test;
-    }
 }

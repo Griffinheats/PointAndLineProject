@@ -17,10 +17,10 @@ public class TestLine2D
         System.out.println("Testing constructor using 4 int's and the toString method ");
         System.out.println("Line 3: " + line3.toString());
         System.out.println("Testing getP1 and getP2 methods: ");
-        System.out.println("Line 1, getP1: " + line1.getP1());
-        System.out.println("Line 1, getP2: "+ line1.getP2());
-        System.out.println("Line 2, getP1: "+ line2.getP1());
-        System.out.println("Line 2, getP2: " + line2.getP2());
+        System.out.println("Line 1, getP1: x=" + line1.getP1().getX() + ", y=" + line1.getP1().getY());
+        System.out.println("Line 1, getP2: x=" + line1.getP2().getX() + ", y=" + line1.getP2().getY());
+        System.out.println("Line 2, getP1: x=" + line2.getP1().getX() + ", y=" + line2.getP1().getY());
+        System.out.println("Line 2, getP2: x=" + line2.getP2().getX() + ", y=" + line2.getP2().getY());
         System.out.println("Testing getSlope");
         System.out.println("Line 1 slope: " + line1.getSlope());
         System.out.println("Line 2 slope: " + line2.getSlope());
